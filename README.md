@@ -4,7 +4,7 @@ Many different car models are produced each year. Keeping track of these models 
 
 # Instructions
 
-The cars.json file contains the cars to use in your application. They are in a JSON format with the fields: Year, Brand Model. So for example:  
+The cars.json file contains the cars to use in your application. They are in a JSON format with the fields: `Year`, `Brand`, and `Model`. So, for example:  
 ```json
 {  
     "year": 2010,  
@@ -28,11 +28,11 @@ So, no additional link data is necessary in the JSON object. Also notice the add
 Also, a message queue will be used to communicate logging information from the server. Not all transactions will be logged. When a logging message is sent to the message queue, the JSON object will be something like:  
 ```json
 {  
-    "mgs":"Looked up cars"  
-    "date""2019-01-04 01:15:35 PM"  
+    "mgs":"Looked up cars",  
+    "date": "2019-01-04 01:15:35 PM"  
 }  
 ```
-Thus we have sent the message Looked up cars time stamped (the time the message is created) 01:14:15 P on January 4, 2019.
+Thus we have sent the message `Looked up cars` time stamped with the time the message is created, 01:15:35 PM on January 4, 2019.
 
 Write a RESTful web application that exposes the following end points
 Expose the following RESTful end points
