@@ -17,7 +17,7 @@ Tells us that a 1 Series BMW model car was produced in year 2010.
 The agreement between the client and server is that JSON objects will be used and each JSON object exchanged will follow the format   
 ```json
 {   
-    "id":1,  
+    "id": 1,  
     "year": 2010,    
     "brand": "BMW",    
     "model": "1 Series"    
@@ -28,7 +28,7 @@ So, no additional link data is necessary in the JSON object. Also notice the add
 Also, a message queue will be used to communicate logging information from the server. Not all transactions will be logged. When a logging message is sent to the message queue, the JSON object will be something like:  
 ```json
 {  
-    "mgs":"Looked up cars",  
+    "msg": "Looked up cars",  
     "date": "2019-01-04 01:15:35 PM"  
 }  
 ```
