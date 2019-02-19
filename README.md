@@ -34,8 +34,7 @@ Also, a message queue will be used to communicate logging information from the s
 ```
 Thus we have sent the message `Looked up cars` time stamped with the time the message is created, 01:15:35 PM on January 4, 2019.
 
-Write a RESTful web application that exposes the following end points
-Expose the following RESTful end points
+Write a RESTful web application that exposes the following end points:
 ## GET
 /cars/id/{id}  
 returns the car based of of id
