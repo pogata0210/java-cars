@@ -38,7 +38,7 @@ returns a list of cars of that year model
 
 /cars/brand/{brand}
 returns a list of cars of that brand
-This gest logged with a message of "search for {brand}". So put the brand of the car that was searched in the message itself.
+This gets logged with a message of "search for {brand}". So put the brand of the car that was searched in the message itself.
 
 ## POST
 /cars/upload  
