@@ -12,7 +12,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class JavaCarsApplication {
+public class JavaCarsApplication
+
+{
 
     public static final String EXCHANGE_NAME = "Car";
     public static final String QUEUE_NAME = "Log";
