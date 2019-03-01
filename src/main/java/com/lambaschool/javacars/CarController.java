@@ -3,6 +3,7 @@ package com.lambaschool.javacars;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -34,12 +35,12 @@ public class CarController
 
     }
 
+
     @GetMapping("/brand/{brand}")
-    public List<Car> findBrand(@PathVariable String brand) {
-        CarLog message = new CarLog(" search for " + brand);
-        log.info(" search for {}" + brand);
+    public List<Car> getCarsByYear(@PathVariable String brand) {
+        CarLog message = new CarLog("Search for " + brand);
         rt.convertAndSend(JavaCarsApplication.QUEUE_NAME, message.toString());
-        return carrepo.findAll().stream().filter(c -> c.getBrand().equalsIgnoreCase(brand)).collect(Collectors.toList());
+        return (List<Car>) carrepo.findCarsByBrand(brand);
     }
     @PostMapping("/upload")
     public List<Car> loadCars(@RequestBody List<Car> carsToUpload) {
@@ -50,12 +51,12 @@ public class CarController
 
 
     @DeleteMapping("/delete/{id}")
-    public Car deleteById(@PathVariable Long id) {
+    public Car deleteById(@PathVariable Long id)
+    {
+
         Car car = carrepo.findById(id).orElseThrow();
         carrepo.delete(car);
         return car;
+
     }
 }
-/**  Car findCarsByYear(int year);
- Car findAllByBrand(String brand);
- void deleteById(Long id);**/
